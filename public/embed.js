@@ -52,14 +52,12 @@
       iframe.scrolling      = 'no';
       iframe.style.overflow = 'hidden';
 
-      iframe.onload = function() {
+      setInterval(() => {
         iframe.contentWindow.postMessage({
           type: 'setHeight',
           id: id,
         }, '*');
-      };
-
-      iframe.onload();
+      }, 750);
     });
   });
 })();
